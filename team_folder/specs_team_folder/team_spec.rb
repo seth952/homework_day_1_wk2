@@ -1,5 +1,5 @@
 require("minitest/autorun")
-require_relative("team")
+require_relative("../team")
 
 class TestTeam < MiniTest::Test
 
@@ -31,7 +31,7 @@ def test_coach
   #make an account instance
   coach_name = Team.new("Slappybags",["Lofty", "Crusher", "Heffer", "Salty", "Jonty"],"Lavender", 0)
   #use a set student_name
-  coach_name.cohort_name()
+  coach_name.cohort_name
   assert_equal("Lavender", coach_name.cohort_name)
   end
 
@@ -53,9 +53,9 @@ def test_coach
 
   end
   def test_player_there__check
-      player_there_? = Team.new("Slappybags",["Lofty", "Crusher", "Heffer", "Salty", "Jonty"],"Lavender", 0)
-      player_there_?.players = "Crusher"
-      assert_equal(false ,player_there?.players)
+      player_there = Team.new("Slappybags",["Lofty", "Crusher", "Heffer", "Salty", "Jonty"],"Lavender", 0)
+      player_there.players = "Crusher"
+      assert_equal(false ,player_there.players)
     end
 
     def test_points_won
